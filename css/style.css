@@ -1,12 +1,6 @@
 * {
     box-sizing: border-box;
 }
-.body {
-position: relative;
-width: 1440px;
-height: 1603px;
-background: #FFFFFF;
-}
 
 .conteiner {
     max-width: 1200px;
