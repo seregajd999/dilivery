@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animate.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="canonical" href="/">
 	<link rel="shortcut icon" href="/img/favicon.ico">
@@ -14,16 +15,17 @@
   <meta name="keywords" content="еда доставка">
 </head>
 <body>
+
 <div class="conteiner">
 	<header class="header">
-		<a href="/"><img src="img/logo.svg" alt="logo" class="logo"></a>
+		<a href="/"><img src="img/logo.svg" alt="logo" class="logo wow zoomIn"></a>
 		<input type="text" class="input input-adres" placeholder="Адрес доставки">
 		<div class="buttons">
 			<button class="button button-primary">
 				<img src="img/user.svg" alt="user" class="button-icon">
 				<span class="button-text">Войти</span>
 			</button>
-			<button class="button">
+			<button class="button" id="card-button">
 			<img src="img/shop.svg" alt="shop" class="button-icon">
 			<span class="button-text">Корзина</span>
 			</button>
@@ -48,8 +50,8 @@
 		</div>
 		<div class="cards">
 
-			<a href="restoun.html" class="card">
-				<img src="img/card-1.png" alt="card-1" class="card-img">
+			<a href="restoun.html" class="card wow fadeInUp" data-wow-delay="0.2s">
+				<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/card-1.png" alt="card-1" class="card-img lazy">
 				<div class="card-text">
 					<div class="card-header">
 						<h3 class="card-title">Пицца плюс</h3>
@@ -63,8 +65,8 @@
 				</div>
 			</a>
 	
-			<a href="restoun.html" class="card">
-				<img src="img/card-2.png" alt="card-1" class="card-img">
+			<a href="restoun.html" class="card wow fadeInUp" data-wow-delay="0.4s">
+				<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/card-2.png" alt="card-1" class="card-img lazy">
 				<div class="card-text">
 					<div class="card-header">
 						<h3 class="card-title">PizzaBurger</h3>
@@ -78,8 +80,8 @@
 				</div>
 			</a>
 	
-			<a href="restoun.html" class="card">
-				<img src="img/card-3.png" alt="card-1" class="card-img">
+			<a href="restoun.html" class="card wow fadeInUp" data-wow-delay="0.6s">
+				<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/card-3.png" alt="card-1" class="card-img lazy">
 				<div class="card-text">
 					<div class="card-header">
 						<h3 class="card-title">Жадина-пицца</h3>
@@ -93,8 +95,8 @@
 				</div>
 			</a>
 	
-			<a href="restoun.html" class="card">
-				<img src="img/card-4.png" alt="card-1" class="card-img">
+			<a href="restoun.html" class="card wow fadeInUp" data-wow-delay="0.2s">
+				<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/card-4.png" alt="card-1" class="card-img lazy">
 				<div class="card-text">
 					<div class="card-header">
 						<h3 class="card-title">FoodBand</h3>
@@ -108,8 +110,8 @@
 				</div>
 			</a>
 	
-			<a href="restoun.html" class="card">
-				<img src="img/card-5.png" alt="card-1" class="card-img">
+			<a href="restoun.html" class="card wow fadeInUp" data-wow-delay="0.4s">
+				<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/card-5.png" alt="card-1" class="card-img lazy">
 				<div class="card-text">
 					<div class="card-header">
 						<h3 class="card-title">Точка еды</h3>
@@ -123,8 +125,8 @@
 				</div>
 			</a>
 	
-			<a href="restoun.html" class="card">
-				<img src="img/card-6.png" alt="card-1" class="card-img">
+			<a href="restoun.html" class="card wow fadeInUp" data-wow-delay="0.6s">
+				<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/card-6.png" alt="card-1" class="card-img lazy">
 				<div class="card-text">
 					<div class="card-header">
 						<h3 class="card-title">Тануки</h3>
@@ -163,6 +165,89 @@
 		</div>
 	</div>
 </footer>
+
+<div class="modal">
+	<div class="modal-dialog">
+		<div class="modal-header">
+			<h3 class="modal-title">Корзина</h3>
+			<button class="close">&times;</button>
+		</div>
+		<div class="modal-body">
+
+			<div class="foods-row">
+				<span class="foods-name">Ролл угорь стандарт</span>
+				<strong class="foods-price">250 ₽</strong>
+				<div class="foods-counter">
+					<button class="counter-button">-</button>
+					<span class="counter">1</span>
+					<button class="counter-button">+</button>
+				</div>
+			</div>
+
+			<div class="foods-row">
+				<span class="foods-name">Ролл угорь стандарт</span>
+				<strong class="foods-price">250 ₽</strong>
+				<div class="foods-counter">
+					<button class="counter-button">-</button>
+					<span class="counter">1</span>
+					<button class="counter-button">+</button>
+				</div>
+			</div>
+
+			<div class="foods-row">
+				<span class="foods-name">Ролл угорь стандарт</span>
+				<strong class="foods-price">250 ₽</strong>
+				<div class="foods-counter">
+					<button class="counter-button">-</button>
+					<span class="counter">1</span>
+					<button class="counter-button">+</button>
+				</div>
+			</div>
+
+			<div class="foods-row">
+				<span class="foods-name">Ролл угорь стандарт</span>
+				<strong class="foods-price">250 ₽</strong>
+				<div class="foods-counter">
+					<button class="counter-button">-</button>
+					<span class="counter">1</span>
+					<button class="counter-button">+</button>
+				</div>
+			</div>
+
+			<div class="foods-row">
+				<span class="foods-name">Ролл угорь стандарт</span>
+				<strong class="foods-price">250 ₽</strong>
+				<div class="foods-counter">
+					<button class="counter-button">-</button>
+					<span class="counter">1</span>
+					<button class="counter-button">+</button>
+				</div>
+			</div>
+			
+		</div>
+		<div class="modal-footer">
+			<span class="modal-pracetag">1250 ₽</span>
+			<div class="footer-buttons">
+				<button class="button button-primary">Оформить заказ</button>
+				<button class="button">Отмена</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/SmoothScroll.min.js"></script>
+<script>SmoothScroll({ keyboardSupport: false })</script>
+<script src="js/main.js"></script>
+<script src="js/wow.min.js"></script>
+<script>new WOW().init();</script>
+<script src="js/lazyload.min.js"></script>
+<script>
+	var lazyLoadInstance = new LazyLoad({
+		elements_selector: ".lazy"
+		// ... more custom settings?
+	});
+</script>
+
 
 </body>
 </html>
